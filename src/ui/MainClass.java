@@ -1,13 +1,13 @@
 package ui;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import model.Book;
-
+import model.Book;
 public class MainClass {
 
-	public static final int SIZE = 10;
-	Book[] booklist = new Book[SIZE];  //注意这里要导包
+	ArrayList<Book> booklist = new ArrayList<Book>();
 	
 	int count = 0;
 	
@@ -55,7 +55,7 @@ public class MainClass {
 	}
 	
 	void addBook() {
-		if(count < SIZE) {
+		if(count > booklist.size()-1) {
 			System.out.println("当前共有："+count+"本书");
 			Scanner scan = new Scanner(System.in);
 			System.out.println("请输入添加书名");
@@ -65,8 +65,7 @@ public class MainClass {
 			System.out.println("请输入单价：");
 			float price = scan.nextFloat();
 			Book book = new Book(bookname,author,price);
-			//加入到数组中
-			booklist[count] = book;
+			booklist.add(book);
 			count++;
 			System.out.println("增加成功！");
 			printAllBook();
@@ -85,9 +84,7 @@ public class MainClass {
 				int id = scan.nextInt();
 				id = orderFind(id);
 				if(id > -1) {
-					for(int i=id; i<count-1; i++) {
-						booklist[i] = booklist[i+1];
-					}
+					booklist.remove(id);
 					count--;
 					System.out.println("删除成功！");
 					printAllBook();
@@ -99,9 +96,7 @@ public class MainClass {
 				String name = scan.next();
 				int id = nameFind(name);
 				if(id > -1) {
-					for(int i=id; i<count-1; i++) {
-						booklist[i] = booklist[i+1];
-					}
+					booklist.remove(id);
 					count--;
 					System.out.println("删除成功！");
 					printAllBook();
@@ -127,14 +122,16 @@ public class MainClass {
 				int number = scan.nextInt();
 				int id = orderFind(number);
 				if(id > -1) {
-					System.out.println("原书名为："+booklist[id].getBookname());
+					
+					Book book = booklist.get(id);//这里的这个book对象就是要改的这本书
+					System.out.println("原书名为："+book.getBookname());
 					System.out.println("请输入要修改的书名为：");
 					String new_name = scan.next();
 					System.out.println("请输入作者：");
 					String new_author = scan.next();
 					System.out.println("请输入单价：");
 					float new_price = scan.nextFloat();
-					booklist[id].setBook(new_name, new_author, new_price);
+					book.setBook(new_name, new_author, new_price);
 					System.out.println("修改成功！");
 					printAllBook();
 				}else {
@@ -145,13 +142,15 @@ public class MainClass {
 				String name = scan.next();
 				int id = nameFind(name);
 				if(id > -1) {
+					//这里并不是new了一个book，这里只是用一个book来接收ArrayList中的对应的book
+					Book book = booklist.get(id);
 					System.out.println("请输入要修改的书名为：");
 					String new_name = scan.next();
 					System.out.println("请输入作者：");
 					String new_author = scan.next();
 					System.out.println("请输入单价：");
 					float new_price = scan.nextFloat();
-					booklist[id].setBook(new_name, new_author, new_price);
+					book.setBook(new_name, new_author, new_price);
 					System.out.println("修改成功！");
 					printAllBook();
 				}	
@@ -173,9 +172,10 @@ public class MainClass {
 				int number = scan.nextInt();
 				int id = orderFind(number);
 				if(id > -1) {
-					System.out.println("你要查找的书名为："+booklist[id].getBookname()
-							+"  作者："+booklist[id].getAuthor()
-							+"  单价："+booklist[id].getPrice()+"元/本");
+					Book book = booklist.get(id);
+					System.out.println("你要查找的书名为："+book.getBookname()
+							+"  作者："+book.getAuthor()
+							+"  单价："+book.getPrice()+"元/本");
 				}else {
 					System.out.println("输入错误！");
 				}
@@ -184,10 +184,11 @@ public class MainClass {
 				String name = scan.next();
 				int id = nameFind(name);
 				if(id > -1) {
+					Book book = booklist.get(id);
 					System.out.println("查找成功！您查找的书为第"+(id+1)+"本书");
-					System.out.println("书名为："+booklist[id].getBookname()
-							+"  作者："+booklist[id].getAuthor()
-							+"  单价为："+booklist[id].getPrice()+"元/本");
+					System.out.println("书名为："+book.getBookname()
+							+"  作者："+book.getAuthor()
+							+"  单价为："+book.getPrice()+"元/本");
 				}
 			}else if(choose == 3) {
 				printMenu();
@@ -199,9 +200,10 @@ public class MainClass {
 	}
 	
 	void printAllBook() {
-		for(int i=0; i<count; i++) {
-			System.out.println("第"+(i+1)+"本书名："+booklist[i].getBookname()+
-					"   作者："+booklist[i].getAuthor()+"   单价："+booklist[i].getPrice()
+		for(int i=0; i<count ; i++) {
+			Book book = booklist.get(i);
+			System.out.println("第"+(i+1)+"本书名："+book.getBookname()+
+					"   作者："+book.getAuthor()+"   单价："+book.getPrice()
 					+"元/本");
 		}
 	}
@@ -217,7 +219,8 @@ public class MainClass {
 	int nameFind(String name) {
 		int id = -1;
 		for(int i=0; i<count; i++) {
-			if(booklist[i].getBookname().equals(name)) {
+			Book book = booklist.get(i);
+			if(book.getBookname().equals(name)) {
 				id = i;
 				break;
 			}else if(i<count) {
