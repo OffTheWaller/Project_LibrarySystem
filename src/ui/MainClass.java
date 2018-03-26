@@ -4,15 +4,18 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import model.Book;
-import model.Book;
+import tool.IO;
 public class MainClass {
 
-	ArrayList<Book> booklist = new ArrayList<Book>();
+	public ArrayList<Book> booklist = new ArrayList<Book>();
 	
-	int count = 0;
+	public int count = 0;
 	
 	public MainClass() {
 		Scanner scan = new Scanner(System.in);
+		
+		IO io = new IO();
+		io.load(this);
 		
 		printMenu();
 		
@@ -22,6 +25,8 @@ public class MainClass {
 			int choice = scan.nextInt();
 			
 			if(choice == 5) {
+				
+				io.save(this);
 				System.out.println("成功退出系统，欢迎下次光临！");
 				break;
 			}
