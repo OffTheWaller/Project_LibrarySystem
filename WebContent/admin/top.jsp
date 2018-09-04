@@ -23,6 +23,13 @@ TH {
 	FONT-SIZE: 12px;
 	COLOR: #000000
 }
+.title {
+	FONT-SIZE: 25px;
+	font-weight: 700;
+	COLOR: #000000;
+	text-align: center;
+	background-color: skyblue;
+}
 </style>
 		<link href="${pageContext.request.contextPath}/css/Style1.css" rel="stylesheet" type="text/css">
 	</HEAD>
@@ -33,7 +40,8 @@ TH {
 					<img width="100%" src="${pageContext.request.contextPath}/images/top_01.jpg">
 				</td>
 
-				<td width="100%" background="${pageContext.request.contextPath}/images/top_100.jpg">
+				<td width="100%" class="title">
+				图书管理系统
 				</td>
 			</tr>
 		</table>
@@ -57,7 +65,7 @@ TH {
 										<td width="155" valign="bottom"
 											background="${pageContext.request.contextPath}/images/mis_05b.jpg">
 											用户名：
-											<font color="blue">zhangsan</font>
+											<font color="blue">admin</font>
 										</td>
 										<td width="10" align="right"
 											background="${pageContext.request.contextPath}/images/mis_05b.jpg">

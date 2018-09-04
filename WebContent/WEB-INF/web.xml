@@ -11,13 +11,13 @@
   </welcome-file-list>
   <servlet>
     <description></description>
-    <display-name>AdminProductListServlet</display-name>
-    <servlet-name>AdminProductListServlet</servlet-name>
-    <servlet-class>com.itheima.web.AdminProductListServlet</servlet-class>
+    <display-name>AdminBookListServlet</display-name>
+    <servlet-name>AdminBookListServlet</servlet-name>
+    <servlet-class>com.library.web.AdminBookListServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>AdminProductListServlet</servlet-name>
-    <url-pattern>/adminProductList</url-pattern>
+    <servlet-name>AdminBookListServlet</servlet-name>
+    <url-pattern>/adminBookList</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>

@@ -26,8 +26,8 @@
 		d.add('01',-1,'系统菜单树'); //01代表本级节点的编号  -1代表根节点
 		d.add('0102','01','分类管理','','','mainFrame');//0102代表本级节点的编号   01代表父级节点
 		d.add('010201','0102','分类管理','${pageContext.request.contextPath}/admin/category/list.jsp','','mainFrame');
-		d.add('0104','01','商品管理');
-		d.add('010401','0104','商品管理','${pageContext.request.contextPath}/adminProductList','','mainFrame');
+		d.add('0104','01','图书管理');
+		d.add('010401','0104','图书管理','${pageContext.request.contextPath}/adminBookList','','mainFrame');
 		d.add('0105','01','人事管理');
 		d.add('010501','0105','人事管理','${pageContext.request.contextPath}/admin/product/list.jsp','','mainFrame');
 		document.write(d);
