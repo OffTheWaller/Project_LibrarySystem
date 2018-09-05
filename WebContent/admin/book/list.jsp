@@ -10,7 +10,7 @@
 	src="${pageContext.request.contextPath}/js/public.js"></script>
 <script type="text/javascript">
 			function addProduct(){
-				window.location.href = "${pageContext.request.contextPath}/adminAddProductUI";
+				window.location.href = "${pageContext.request.contextPath}/adminAddBookUI";
 			}
 			
 			function delProduct(pid){

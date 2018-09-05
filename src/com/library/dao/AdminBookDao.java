@@ -28,14 +28,14 @@ public class AdminBookDao {
 		return categoryList;
 	}
 
-	public void addProduct(Product product) throws SQLException {
-		QueryRunner runner = new QueryRunner(DataSourceUtils.getDataSource());
-		String sql = "insert into product values(?,?,?,?,?,?,?,?,?,?)";
-		runner.update(sql, product.getPid(),product.getPname(),product.getMarket_price(),
-					product.getShop_price(),product.getPimage(),product.getPdate(),product.getIs_hot(),
-					product.getPdesc(),product.getPflag(),product.getCid());
-		
-	}
+//	public void addProduct(Product product) throws SQLException {
+//		QueryRunner runner = new QueryRunner(DataSourceUtils.getDataSource());
+//		String sql = "insert into product values(?,?,?,?,?,?,?,?,?,?)";
+//		runner.update(sql, product.getPid(),product.getPname(),product.getMarket_price(),
+//					product.getShop_price(),product.getPimage(),product.getPdate(),product.getIs_hot(),
+//					product.getPdesc(),product.getPflag(),product.getCid());
+//		
+//	}
 
 	public void delProductByPid(String pid) throws SQLException {
 		QueryRunner runner = new QueryRunner(DataSourceUtils.getDataSource());
@@ -51,12 +51,12 @@ public class AdminBookDao {
 		return product;
 	}
 
-	public void updateProduct(Product product) throws SQLException {
-		QueryRunner runner = new QueryRunner(DataSourceUtils.getDataSource());
-		String sql = "update product set pname=?,market_price=?,shop_price=?,pimage=?,pdate=?,is_hot=?,pdesc=?,pflag=?,cid=? where pid=?";
-		runner.update(sql,product.getPname(),product.getMarket_price(),
-				product.getShop_price(),product.getPimage(),product.getPdate(),product.getIs_hot(),
-				product.getPdesc(),product.getPflag(),product.getCid(),product.getPid());
-	}
+//	public void updateProduct(Product product) throws SQLException {
+//		QueryRunner runner = new QueryRunner(DataSourceUtils.getDataSource());
+//		String sql = "update product set pname=?,market_price=?,shop_price=?,pimage=?,pdate=?,is_hot=?,pdesc=?,pflag=?,cid=? where pid=?";
+//		runner.update(sql,product.getPname(),product.getMarket_price(),
+//				product.getShop_price(),product.getPimage(),product.getPdate(),product.getIs_hot(),
+//				product.getPdesc(),product.getPflag(),product.getCid(),product.getPid());
+//	}
 
 }

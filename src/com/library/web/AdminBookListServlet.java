@@ -26,7 +26,7 @@ public class AdminBookListServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 		
-		//将productList放到request域
+		//将bookList放到request域
 		request.setAttribute("bookList", bookList);
 		
 		request.getRequestDispatcher("/admin/book/list.jsp").forward(request, response);

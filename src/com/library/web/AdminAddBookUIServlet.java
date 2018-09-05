@@ -12,12 +12,12 @@ import javax.servlet.http.HttpServletResponse;
 import com.library.domain.Category;
 import com.library.service.AdminBookService;
 
-public class AdminAddProductUIServlet extends HttpServlet {
+public class AdminAddBookUIServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		//获得所有的商品的类别数据
+		//获得所有的图书的类别数据
 		AdminBookService service = new AdminBookService();
 		List<Category> categoryList = null;
 		try {
@@ -28,7 +28,7 @@ public class AdminAddProductUIServlet extends HttpServlet {
 		
 		request.setAttribute("categoryList", categoryList);
 		
-		request.getRequestDispatcher("/admin/product/add.jsp").forward(request, response);
+		request.getRequestDispatcher("/admin/book/add.jsp").forward(request, response);
 		
 	}
 

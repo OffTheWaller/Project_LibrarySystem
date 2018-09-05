@@ -21,13 +21,13 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>AdminAddProductUIServlet</display-name>
-    <servlet-name>AdminAddProductUIServlet</servlet-name>
-    <servlet-class>com.itheima.web.AdminAddProductUIServlet</servlet-class>
+    <display-name>AdminAddBookUIServlet</display-name>
+    <servlet-name>AdminAddBookUIServlet</servlet-name>
+    <servlet-class>com.library.web.AdminAddBookUIServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>AdminAddProductUIServlet</servlet-name>
-    <url-pattern>/adminAddProductUI</url-pattern>
+    <servlet-name>AdminAddBookUIServlet</servlet-name>
+    <url-pattern>/adminAddBookUI</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>
