@@ -15,22 +15,24 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.beanutils.BeanUtils;
 
+import com.library.domain.Book;
 import com.library.domain.Product;
 import com.library.service.AdminBookService;
 
-public class AdminAddProductServlet extends HttpServlet {
+public class AdminAddBookServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
+		//使服务器获取中文参数
 		request.setCharacterEncoding("UTF-8");
 		
-		//1、获取数据
+		//1、获取数据(使用BeanUtils获取整个表单的数据，要检查一下表单中的name和实体中的字段是否名字一样)
 		Map<String, String[]> properties = request.getParameterMap();
 		//2、封装数据
-		Product product = new Product();
+		Book book = new Book();
 		try {
-			BeanUtils.populate(product, properties);
+			BeanUtils.populate(book, properties);
 		} catch (IllegalAccessException | InvocationTargetException e) {
 			e.printStackTrace();
 		}
@@ -38,26 +40,25 @@ public class AdminAddProductServlet extends HttpServlet {
 		//此位置Product已经封装完毕----将表单的数据封装完毕
 		//手动设置表单中没有数据
 		//1）、private String pid;
-		product.setPid(UUID.randomUUID().toString());
+		book.setBid(UUID.randomUUID().toString());
 		//2）、private String pimage;
-		product.setPimage("products/1/c_0033.jpg");
+		book.setBimage("books/1.jpg");
 		//3）、private String pdate;//上架日期
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-		String pdate = format.format(new Date());
-		product.setPdate(pdate);
-		//4）、private int pflag;//商品是否下载 0代表未下架
-		product.setPflag(0);
+		String bdate = format.format(new Date());
+		book.setBdate(bdate);
+		
 		
 		//3、传递数据给service层
 		AdminBookService service = new AdminBookService();
 		try {
-			service.addProduct(product);
+			service.addBook(book);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		
 		//跳转到列表页面
-		response.sendRedirect(request.getContextPath()+"/adminProductList");
+		response.sendRedirect(request.getContextPath()+"/adminBookList");
 		
 	}
 

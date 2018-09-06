@@ -9,7 +9,7 @@
 	
 	<body>
 		<!--  -->
-		<form id="userAction_save_do" name="Form1" action="${pageContext.request.contextPath}/adminAddProduct" method="post">
+		<form id="userAction_save_do" name="Form1" action="${pageContext.request.contextPath}/adminAddBook" method="post">
 			&nbsp;
 			<table cellSpacing="1" cellPadding="5" width="100%" align="center" bgColor="#eeeeee" style="border: 1px solid #8ba7e3" border="0">
 				<tr>
@@ -25,7 +25,7 @@
 						图书名称：
 					</td>
 					<td class="ta_01" bgColor="#ffffff">
-						<input type="text" name="pname" value="" id="userAction_save_do_logonName" class="bg"/>
+						<input type="text" name="bname" value="" id="userAction_save_do_logonName" class="bg"/>
 					</td>
 					<td width="18%" align="center" bgColor="#f5fafe" class="ta_01">
 						是否热门：
@@ -43,7 +43,7 @@
 						图书价格：
 					</td>
 					<td class="ta_01" bgColor="#ffffff">
-						<input type="text" name="shop_price" value="" id="userAction_save_do_logonName" class="bg"/>
+						<input type="text" name="bprice" value="" id="userAction_save_do_logonName" class="bg"/>
 					</td>
 				</tr>
 				<tr>
@@ -51,7 +51,7 @@
 						图书封面：
 					</td>
 					<td class="ta_01" bgColor="#ffffff" colspan="3">
-						<input type="file" name="upload" />
+						<input type="file" name="bimage" />
 					</td>
 				</tr>
 				<tr>
@@ -73,7 +73,7 @@
 						图书描述：
 					</td>
 					<td class="ta_01" bgColor="#ffffff" colspan="3">
-						<textarea name="pdesc" rows="5" cols="30"></textarea>
+						<textarea name="bdesc" rows="5" cols="30"></textarea>
 					</td>
 				</tr>
 				<tr>

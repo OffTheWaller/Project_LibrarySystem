@@ -16,4 +16,4 @@
   | varchar | varchar |
 
 
-- 后台访问地址:
+- 后台访问地址:http://localhost:8080/library-system/admin/

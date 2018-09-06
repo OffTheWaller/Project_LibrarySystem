@@ -28,14 +28,12 @@ public class AdminBookDao {
 		return categoryList;
 	}
 
-//	public void addProduct(Product product) throws SQLException {
-//		QueryRunner runner = new QueryRunner(DataSourceUtils.getDataSource());
-//		String sql = "insert into product values(?,?,?,?,?,?,?,?,?,?)";
-//		runner.update(sql, product.getPid(),product.getPname(),product.getMarket_price(),
-//					product.getShop_price(),product.getPimage(),product.getPdate(),product.getIs_hot(),
-//					product.getPdesc(),product.getPflag(),product.getCid());
-//		
-//	}
+	public void addBook(Book book) throws SQLException {
+		QueryRunner runner = new QueryRunner(DataSourceUtils.getDataSource());
+		String sql = "insert into book values(?,?,?,?,?,?,?,?)";
+		runner.update(sql, book.getBid(),book.getBname(),book.getBprice(),book.getBimage(),book.getBdate(),book.getIs_hot(),book.getBdesc(),book.getCid());
+		
+	}
 
 	public void delProductByPid(String pid) throws SQLException {
 		QueryRunner runner = new QueryRunner(DataSourceUtils.getDataSource());

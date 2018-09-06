@@ -24,9 +24,9 @@ public class AdminBookService {
 	}
 
 	//添加数据
-	public void addProduct(Product product) throws SQLException {
+	public void addBook(Book book) throws SQLException {
 		AdminBookDao dao = new AdminBookDao();
-//		dao.addProduct(product);
+		dao.addBook(book);
 	}
 
 	//根据pid删除商品
