@@ -41,13 +41,13 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>AdminDelProductServlet</display-name>
-    <servlet-name>AdminDelProductServlet</servlet-name>
-    <servlet-class>com.itheima.web.AdminDelProductServlet</servlet-class>
+    <display-name>AdminDelBookServlet</display-name>
+    <servlet-name>AdminDelBookServlet</servlet-name>
+    <servlet-class>com.library.web.AdminDelBookServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>AdminDelProductServlet</servlet-name>
-    <url-pattern>/adminDelProduct</url-pattern>
+    <servlet-name>AdminDelBookServlet</servlet-name>
+    <url-pattern>/adminDelBook</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>

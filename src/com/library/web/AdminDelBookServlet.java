@@ -10,23 +10,23 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.library.service.AdminBookService;
 
-public class AdminDelProductServlet extends HttpServlet {
+public class AdminDelBookServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
 		//获取要删除的pid
-		String pid = request.getParameter("pid");
+		String bid = request.getParameter("bid");
 		
 		//传递pid到service层
 		AdminBookService service = new AdminBookService();
 		try {
-			service.delProductByPid(pid);
+			service.delBookByBid(bid);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		
-		response.sendRedirect(request.getContextPath()+"/adminProductList");
+		response.sendRedirect(request.getContextPath()+"/adminBookList");
 		
 	}
 

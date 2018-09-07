@@ -13,11 +13,11 @@
 				window.location.href = "${pageContext.request.contextPath}/adminAddBookUI";
 			}
 			
-			function delProduct(pid){
+			function delProduct(bid){
 				var isDel = confirm("您确认要删除吗？");
 				if(isDel){
 					//要删除
-					location.href = "${pageContext.request.contextPath}/adminDelProduct?pid="+pid;
+					location.href = "${pageContext.request.contextPath}/adminDelBook?bid="+bid;
 				}
 			}
 			

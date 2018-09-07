@@ -35,10 +35,10 @@ public class AdminBookDao {
 		
 	}
 
-	public void delProductByPid(String pid) throws SQLException {
+	public void delBookByBid(String bid) throws SQLException {
 		QueryRunner runner = new QueryRunner(DataSourceUtils.getDataSource());
-		String sql = "delete from product where pid=?";
-		runner.update(sql, pid);
+		String sql = "delete from book where bid=?";
+		runner.update(sql, bid);
 		
 	}
 

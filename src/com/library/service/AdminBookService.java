@@ -30,9 +30,9 @@ public class AdminBookService {
 	}
 
 	//根据pid删除商品
-	public void delProductByPid(String pid) throws SQLException {
+	public void delBookByBid(String bid) throws SQLException {
 		AdminBookDao dao = new AdminBookDao();
-		dao.delProductByPid(pid);
+		dao.delBookByBid(bid);
 	}
 
 	
