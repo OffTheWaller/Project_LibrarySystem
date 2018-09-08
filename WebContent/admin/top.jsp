@@ -37,7 +37,7 @@ TH {
 		<table width="100%" height="70%"  border="0" cellspacing="0" cellpadding="0">
 			<tr>
 				<td>
-					<img width="100%" src="${pageContext.request.contextPath}/images/top_01.jpg">
+					
 				</td>
 
 				<td width="100%" class="title">

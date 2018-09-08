@@ -29,24 +29,24 @@ public class AdminBookService {
 		dao.addBook(book);
 	}
 
-	//根据pid删除商品
+	//根据bid删除图书
 	public void delBookByBid(String bid) throws SQLException {
 		AdminBookDao dao = new AdminBookDao();
 		dao.delBookByBid(bid);
 	}
 
 	
-	//根据pid查询商品对象
-	public Product findProductByPid(String pid) throws SQLException {
+	//根据bid查询图书对象
+	public Book findBookByBid(String bid) throws SQLException {
 		AdminBookDao dao = new AdminBookDao();
-		return dao.findProductByPid(pid);
+		return dao.findBookByBid(bid);
 	}
 
 	
 	//更新商品
-	public void updateProduct(Product product) throws SQLException {
+	public void updateBook(Book book) throws SQLException {
 		AdminBookDao dao = new AdminBookDao();
-//		dao.updateProduct(product);
+		dao.updateBook(book);
 	}
 
 }

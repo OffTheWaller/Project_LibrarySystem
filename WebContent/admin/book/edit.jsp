@@ -11,16 +11,16 @@
 		<script type="text/javascript">
 		
 			$(function(){
-				//获得当前回显的product的cid
-				$("#cid option[value='${product.cid }']").prop("selected",true);
+				//获得当前回显的book的cid
+				$("#cid option[value='${book.cid }']").prop("selected",true);
 				//是否热门
-				$("#is_hot option[value='${product.is_hot }']").prop("selected",true);
+				$("#is_hot option[value='${book.is_hot }']").prop("selected",true);
 			});
 		
 		
 			//页面加载完毕后 确定那个option被选中
 			/* window.onload = function(){
-				//获得当前回显的product的cid
+				//获得当前回显的book的cid
 				var cid = "${product.cid }";
 				//获得所有的<select name="cid">下的option
 				var options = document.getElementById("cid").getElementsByTagName("option");
@@ -41,25 +41,25 @@
 	
 	<body>
 		<!--  -->
-		<form id="userAction_save_do" name="Form1" action="${pageContext.request.contextPath}/adminUpdateProduct" method="post">
+		<form id="userAction_save_do" name="Form1" action="${pageContext.request.contextPath}/adminUpdateBook" method="post">
 			
-			<input type="hidden" name="pid" value="${product.pid }">
+			<input type="hidden" name="bid" value="${book.bid }">
 			
 			<table cellSpacing="1" cellPadding="5" width="100%" align="center" bgColor="#eeeeee" style="border: 1px solid #8ba7e3" border="0">
 				<tr>
 					<td class="ta_01" align="center" bgColor="#afd1f3" colSpan="4"
 						height="26">
-						<strong><STRONG>编辑商品</STRONG>
+						<strong><STRONG>编辑图书</STRONG>
 						</strong>
 					</td>
 				</tr>
 
 				<tr>
 					<td width="18%" align="center" bgColor="#f5fafe" class="ta_01">
-						商品名称：
+						图书名称：
 					</td>
 					<td class="ta_01" bgColor="#ffffff">
-						<input type="text" name="pname" value="${product.pname }" id="userAction_save_do_logonName" class="bg"/>
+						<input type="text" name="bname" value="${book.bname }" id="userAction_save_do_logonName" class="bg"/>
 					</td>
 					<td width="18%" align="center" bgColor="#f5fafe" class="ta_01">
 						是否热门：
@@ -74,21 +74,16 @@
 				</tr>
 				<tr>
 					<td width="18%" align="center" bgColor="#f5fafe" class="ta_01">
-						市场价格：
+						图书价格：
 					</td>
 					<td class="ta_01" bgColor="#ffffff">
-						<input type="text" name="market_price" value="${product.market_price }" id="userAction_save_do_logonName" class="bg"/>
+						<input type="text" name="bprice" value="${book.bprice }" id="userAction_save_do_logonName" class="bg"/>
 					</td>
-					<td width="18%" align="center" bgColor="#f5fafe" class="ta_01">
-						商城价格：
-					</td>
-					<td class="ta_01" bgColor="#ffffff">
-						<input type="text" name="shop_price" value="${product.shop_price }" id="userAction_save_do_logonName" class="bg"/>
-					</td>
+					
 				</tr>
 				<tr>
 					<td width="18%" align="center" bgColor="#f5fafe" class="ta_01">
-						商品图片：
+						图书封面：
 					</td>
 					<td class="ta_01" bgColor="#ffffff" colspan="3">
 						<input type="file" name="upload" />
@@ -108,10 +103,10 @@
 				</tr>
 				<tr>
 					<td width="18%" align="center" bgColor="#f5fafe" class="ta_01">
-						商品描述：
+						图书描述：
 					</td>
 					<td class="ta_01" bgColor="#ffffff" colspan="3">
-						<textarea name="pdesc" rows="5" cols="30">${product.pdesc }</textarea>
+						<textarea name="bdesc" rows="5" cols="30">${book.bdesc }</textarea>
 					</td>
 				</tr>
 				<tr>

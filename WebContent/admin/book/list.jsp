@@ -77,7 +77,7 @@
 									<td style="CURSOR: hand; HEIGHT: 22px" align="center"
 										width="17%">${book.is_hot==1?"是":"否" }</td>
 									<td align="center" style="HEIGHT: 22px"><a
-										href="${ pageContext.request.contextPath }/adminUpdateProductUI?bid=${book.bid}">
+										href="${ pageContext.request.contextPath }/adminUpdateBookUI?bid=${book.bid}">
 											<img
 											src="${pageContext.request.contextPath}/images/i_edit.gif"
 											border="0" style="CURSOR: hand">

@@ -42,19 +42,19 @@ public class AdminBookDao {
 		
 	}
 
-	public Product findProductByPid(String pid) throws SQLException {
+	public Book findBookByBid(String bid) throws SQLException {
 		QueryRunner runner = new QueryRunner(DataSourceUtils.getDataSource());
-		String sql = "select * from product where pid=?";
-		Product product = runner.query(sql, new BeanHandler<Product>(Product.class), pid);
-		return product;
+		String sql = "select * from book where bid=?";
+		Book book = runner.query(sql, new BeanHandler<Book>(Book.class), bid);
+		return book;
 	}
 
-//	public void updateProduct(Product product) throws SQLException {
-//		QueryRunner runner = new QueryRunner(DataSourceUtils.getDataSource());
-//		String sql = "update product set pname=?,market_price=?,shop_price=?,pimage=?,pdate=?,is_hot=?,pdesc=?,pflag=?,cid=? where pid=?";
-//		runner.update(sql,product.getPname(),product.getMarket_price(),
-//				product.getShop_price(),product.getPimage(),product.getPdate(),product.getIs_hot(),
-//				product.getPdesc(),product.getPflag(),product.getCid(),product.getPid());
-//	}
+	public void updateBook(Book book) throws SQLException {
+		QueryRunner runner = new QueryRunner(DataSourceUtils.getDataSource());
+		String sql = "update book set bname=?,bprice=?,bimage=?,bdate=?,is_hot=?,bdesc=?,cid=? where bid=?";
+		runner.update(sql,book.getBname(),book.getBprice(),
+				book.getBimage(),book.getBdate(),book.getIs_hot(),
+				book.getBdesc(),book.getCid(),book.getBid());
+	}
 
 }

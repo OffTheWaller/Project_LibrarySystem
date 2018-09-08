@@ -51,22 +51,22 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>AdminUpdateProductUIServlet</display-name>
-    <servlet-name>AdminUpdateProductUIServlet</servlet-name>
-    <servlet-class>com.itheima.web.AdminUpdateProductUIServlet</servlet-class>
+    <display-name>AdminUpdateBookUIServlet</display-name>
+    <servlet-name>AdminUpdateBookUIServlet</servlet-name>
+    <servlet-class>com.library.web.AdminUpdateBookUIServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>AdminUpdateProductUIServlet</servlet-name>
-    <url-pattern>/adminUpdateProductUI</url-pattern>
+    <servlet-name>AdminUpdateBookUIServlet</servlet-name>
+    <url-pattern>/adminUpdateBookUI</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>AdminUpdateProductServlet</display-name>
-    <servlet-name>AdminUpdateProductServlet</servlet-name>
-    <servlet-class>com.itheima.web.AdminUpdateProductServlet</servlet-class>
+    <display-name>AdminUpdateBookServlet</display-name>
+    <servlet-name>AdminUpdateBookServlet</servlet-name>
+    <servlet-class>com.library.web.AdminUpdateBookServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>AdminUpdateProductServlet</servlet-name>
-    <url-pattern>/adminUpdateProduct</url-pattern>
+    <servlet-name>AdminUpdateBookServlet</servlet-name>
+    <url-pattern>/adminUpdateBook</url-pattern>
   </servlet-mapping>
 </web-app>

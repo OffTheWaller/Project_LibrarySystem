@@ -15,10 +15,11 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.beanutils.BeanUtils;
 
+import com.library.domain.Book;
 import com.library.domain.Product;
 import com.library.service.AdminBookService;
 
-public class AdminUpdateProductServlet extends HttpServlet {
+public class AdminUpdateBookServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -28,34 +29,33 @@ public class AdminUpdateProductServlet extends HttpServlet {
 		//1、获取数据
 		Map<String, String[]> properties = request.getParameterMap();
 		//2、封装数据
-		Product product = new Product();
+		Book book = new Book();
 		try {
-			BeanUtils.populate(product, properties);
+			BeanUtils.populate(book, properties);
 		} catch (IllegalAccessException | InvocationTargetException e) {
 			e.printStackTrace();
 		}
 
-		//此位置Product已经封装完毕----将表单的数据封装完毕
+		//此位置Book已经封装完毕----将表单的数据封装完毕
 		//手动设置表单中没有数据
-		//2）、private String pimage;
-		product.setPimage("products/1/c_0033.jpg");
+		//2）、private String bimage;
+		book.setBimage("books/1.jpg");
 		//3）、private String pdate;//上架日期
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-		String pdate = format.format(new Date());
-		product.setPdate(pdate);
-		//4）、private int pflag;//商品是否下载 0代表未下架
-		product.setPflag(0);
+		String bdate = format.format(new Date());
+		book.setBdate(bdate);
+		
 
 		//3、传递数据给service层
 		AdminBookService service = new AdminBookService();
 		try {
-			service.updateProduct(product);
+			service.updateBook(book);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 
 		//跳转到列表页面
-		response.sendRedirect(request.getContextPath()+"/adminProductList");
+		response.sendRedirect(request.getContextPath()+"/adminBookList");
 
 	}
 
