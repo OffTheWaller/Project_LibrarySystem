@@ -17,3 +17,4 @@
 
 
 - 后台访问地址:http://localhost:8080/library-system/admin/
+- 数据库文件：db.sql。导入MySQL即可
